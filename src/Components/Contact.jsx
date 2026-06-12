@@ -1,10 +1,30 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Footer from "./Footer";
 import "./Contact.css";
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [review, setReview] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!review.trim()) {
+      return;
+    }
+
+    setShowSuccess(true);
+    setName("");
+    setReview("");
+  };
+
+  const closeSuccess = () => setShowSuccess(false);
+
   return (
-    <div className="contact-page">
+    <div className="contact-root">
+      <div className="contact-page">
 
       {/* NAVBAR */}
 
@@ -141,24 +161,44 @@ function Contact() {
 
           <p>Share your experience with us.</p>
 
-          <input
-            type="text"
-            placeholder="Your Name"
-          />
+          <form className="review-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-          <textarea
-            placeholder="Write your review..."
-          ></textarea>
+            <textarea
+              placeholder="Write your review..."
+              value={review}
+              onChange={(e) => setReview(e.target.value)}
+            ></textarea>
 
-          <button>
-            Submit Review
-          </button>
+            <button type="submit">
+              Submit Review
+            </button>
+          </form>
 
         </div>
 
       </div>
 
       <Footer />
+
+      {showSuccess && (
+        <div className="success-popup-overlay">
+          <div className="success-popup">
+            <div className="success-icon">✓</div>
+            <h3>Review Submitted Successfully!</h3>
+            <p>Thank you for sharing your feedback.</p>
+            <button className="success-ok-btn" onClick={closeSuccess}>
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
 
     </div>
   );

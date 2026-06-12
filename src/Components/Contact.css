@@ -219,6 +219,96 @@ body{
     transition: 0.3s;
 }
 
+.review-form input,
+.review-form textarea {
+    width: 100%;
+}
+
+.success-popup-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 20, 30, 0.68);
+    z-index: 1100;
+    animation: fadeInOverlay 0.32s ease;
+    padding: 20px;
+}
+
+.success-popup {
+    width: min(520px, calc(100% - 48px));
+    background: white;
+    border-radius: 28px;
+    padding: 36px 32px;
+    box-shadow: 0 24px 60px rgba(15, 25, 40, 0.16);
+    text-align: center;
+    animation: popupRise 0.32s ease;
+    transform-origin: center center;
+}
+
+.success-icon {
+    width: 78px;
+    height: 78px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #eaf7ed;
+    color: #1d8c3a;
+    font-size: 2.4rem;
+    box-shadow: inset 0 0 0 1px rgba(29, 140, 58, 0.12);
+}
+
+.success-popup h3 {
+    margin-bottom: 12px;
+    color: #2f3440;
+    font-size: 1.55rem;
+}
+
+.success-popup p {
+    color: #616a74;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.success-ok-btn {
+    width: 100%;
+    padding: 14px 0;
+    border: none;
+    border-radius: 14px;
+    background: #1d8c3a;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.success-ok-btn:hover {
+    background: #176c2e;
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popupRise {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .review-box button:hover{
     background: #b96d00;
 }

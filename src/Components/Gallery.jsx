@@ -1,30 +1,65 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import "./Gallery.css";
 
 function Gallery() {
-
   const galleryImages = [
     {
-      img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop",
+      alt: "Freshly baked cupcakes with rose frosting",
       className: "big-card",
     },
-
     {
-      img: "https://images.unsplash.com/photo-1464306076886-da185f6a9d05?q=80&w=1200&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1512058564366-c9e3ad7aad59?q=80&w=1200&auto=format&fit=crop",
+      alt: "Golden croissants and artisan bread",
       className: "small-card",
     },
-
     {
-      img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=1200&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1604908177549-62d7500d0f98?q=80&w=1200&auto=format&fit=crop",
+      alt: "Colorful macarons and pastries",
       className: "small-card",
     },
-
     {
-      img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1200&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1200&auto=format&fit=crop",
+      alt: "Signature layered cake with fresh berries",
       className: "wide-card",
     },
+    {
+      img: "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1200&auto=format&fit=crop",
+      alt: "Warm bakery cookies on a wooden board",
+      className: "small-card",
+    },
+    {
+      img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop",
+      alt: "Premium bakery special desserts plated elegantly",
+      className: "small-card",
+    },
   ];
+
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  const openLightbox = (index) => {
+    setSelectedIndex(index);
+  };
+
+  const closeLightbox = () => {
+    setSelectedIndex(null);
+  };
+
+  const showPrev = (event) => {
+    event.stopPropagation();
+    setSelectedIndex((current) =>
+      current === 0 ? galleryImages.length - 1 : current - 1
+    );
+  };
+
+  const showNext = (event) => {
+    event.stopPropagation();
+    setSelectedIndex((current) =>
+      current === galleryImages.length - 1 ? 0 : current + 1
+    );
+  };
 
   return (
     <div className="gallery-page">
@@ -92,15 +127,39 @@ function Gallery() {
 
         {galleryImages.map((item, index) => (
 
-          <div className={item.className} key={index}>
-
-            <img src={item.img} alt={`Gallery ${index + 1}`} />
-
-          </div>
+          <button
+            type="button"
+            className={`gallery-card ${item.className}`}
+            key={index}
+            onClick={() => openLightbox(index)}
+            aria-label={`Open image ${index + 1} in lightbox`}
+          >
+            <img src={item.img} alt={item.alt} />
+          </button>
 
         ))}
 
       </div>
+
+      {selectedIndex !== null && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <div className="lightbox-frame" onClick={(event) => event.stopPropagation()}>
+            <button className="lightbox-close" onClick={closeLightbox} aria-label="Close lightbox">
+              ×
+            </button>
+            <button className="lightbox-arrow lightbox-prev" onClick={showPrev} aria-label="Previous image">
+              ‹
+            </button>
+            <img src={galleryImages[selectedIndex].img} alt={galleryImages[selectedIndex].alt} />
+            <button className="lightbox-arrow lightbox-next" onClick={showNext} aria-label="Next image">
+              ›
+            </button>
+            <div className="lightbox-caption">
+              {selectedIndex + 1} / {galleryImages.length}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
 
