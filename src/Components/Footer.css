@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@600&display=swap');
+
+.footer{
+    width: 100%;
+    background: linear-gradient(
+        135deg,
+        #2a120d,
+        #3d1f16
+    );
+
+    padding: 70px 8% 30px;
+
+    color: white;
+
+    margin-top: 80px;
+}
+
+/* CONTAINER */
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* LEFT */
+
+.footer-left{
+    flex: 1;
+    min-width: 280px;
+}
+
+.footer-logo{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.footer-circle{
+    width: 60px;
+    height: 60px;
+
+    background: #d88408;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.footer-logo h2{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+}
+
+.footer-logo p{
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+}
+
+.footer-desc{
+    color: rgba(255,255,255,0.75);
+
+    line-height: 1.8;
+    font-size: 1.05rem;
+
+    max-width: 500px;
+}
+
+/* CENTER */
+
+.footer-center{
+    min-width: 180px;
+}
+
+.footer-center h3,
+.footer-right h3{
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-links a{
+    text-decoration: none;
+    color: rgba(255,255,255,0.75);
+
+    transition: 0.3s;
+}
+
+.footer-links a:hover{
+    color: #f0a528;
+    transform: translateX(5px);
+}
+
+/* RIGHT */
+
+.footer-right{
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer-contact p{
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+}
+
+/* BOTTOM */
+
+.footer-bottom{
+    border-top: 1px solid rgba(255,255,255,0.12);
+
+    margin-top: 50px;
+    padding-top: 25px;
+
+    text-align: center;
+
+    color: rgba(255,255,255,0.55);
+
+    font-size: 0.95rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px){
+
+    .footer{
+        padding: 60px 6% 30px;
+    }
+
+    .footer-container{
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer-logo h2{
+        font-size: 1.7rem;
+    }
+
+    .footer-desc{
+        font-size: 1rem;
+    }
+}
