@@ -107,8 +107,6 @@ function Menu() {
         </ul>
 
         <div className="menu-icons">
-          <span>📞</span>
-          <span>🛒</span>
         </div>
       </nav>
 

@@ -62,8 +62,6 @@ function Contact() {
         </ul>
 
         <div className="contact-icons">
-          <span>📞</span>
-          <span>🛒</span>
         </div>
 
       </nav>
@@ -94,7 +92,7 @@ function Contact() {
               href="tel:+919908808421"
               className="info-card"
             >
-              <h3>📞 Call Us</h3>
+              <h3>Call Us</h3>
               <p>+91 99088 08421</p>
             </a>
 
@@ -106,7 +104,7 @@ function Contact() {
               rel="noreferrer"
               className="info-card"
             >
-              <h3>💬 WhatsApp</h3>
+              <h3>WhatsApp</h3>
               <p>Order Online</p>
             </a>
 
@@ -118,7 +116,7 @@ function Contact() {
               rel="noreferrer"
               className="info-card"
             >
-              <h3>📍 Visit Us</h3>
+              <h3>Visit Us</h3>
 
               <p>
                 Bongloor X Road, Opposite HP Petrol Pump,

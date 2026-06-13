@@ -56,13 +56,17 @@ function Homepage() {
             <span className="dot"></span>
             FRESHLY BAKED DAILY
           </div>
+<h1 className="hero-title bounce-title">
+  Sri Vinayaka
+</h1>
 
-          <h1>Sri Vinayaka</h1>
+<h2 className="hero-subtitle bounce-subtitle">
+  Bengaluru Bakery
+</h2>
 
-          <h2>Bengaluru Bakery</h2>
-
-          <h3>& Fast Food Center</h3>
-
+<h3 className="hero-third-title bounce-third">
+  & Fast Food Center
+</h3>
           <p>
             Fresh Cakes, Bakery Delights & Delicious Fast Food
             Under One Roof

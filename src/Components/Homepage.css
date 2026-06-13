@@ -30,7 +30,7 @@ body{
   overflow:hidden;
   background-image:
     radial-gradient(circle at 22% 42%, rgba(255, 235, 205, 0.18), transparent 20%),
-    linear-gradient(90deg, rgba(8, 4, 2, 0.92) 18%, rgba(24, 16, 10, 0.52) 44%, rgba(10, 4, 2, 0.26) 100%),
+    linear-gradient(90deg, rgba(21, 13, 10, 0.92) 18%, rgba(24, 16, 10, 0.52) 44%, rgba(10, 4, 2, 0.26) 100%),
     url("https://media.base44.com/images/public/6a29246ed762f5bdb84d5233/c7d126355_generated_04c13c40.png?utm_source=chatgpt.com");
   background-size: cover;
   background-position: right center;
@@ -247,7 +247,7 @@ body{
 }
 
 .logo-section p{
-  color:rgba(255,255,255,0.7);
+  color:rgba(230, 232, 236, 0.7);
   font-size:0.8rem;
   letter-spacing:2px;
 }
@@ -633,5 +633,86 @@ body{
   .speciality-section h2,
   .reviews-section h2{
     font-size:2.2rem;
+  }
+}
+
+/* ===== HERO ANIMATIONS ===== */
+
+.hero-content h1{
+  animation: bounceUp 1s ease forwards;
+}
+
+.hero-content h2{
+  animation: bounceUp 1.3s ease forwards;
+}
+
+.hero-content h3{
+  animation: bounceUp 1.6s ease forwards;
+}
+
+.hero-content p{
+  animation: bounceUp 1.9s ease forwards;
+}
+
+.hero-buttons{
+  animation: bounceUp 2.2s ease forwards;
+}
+
+@keyframes bounceUp{
+  0%{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  60%{
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+
+  80%{
+    transform: translateY(10px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1{
+  animation: bounceHero 1.2s ease;
+}
+
+.hero-content h2{
+  animation: bounceHero 1.5s ease;
+}
+
+.hero-content h3{
+  animation: bounceHero 1.8s ease;
+}
+
+.hero-buttons{
+  animation: bounceHero 2.1s ease;
+}
+
+@keyframes bounceHero{
+
+  0%{
+    opacity:0;
+    transform:scale(0.3) translateY(150px);
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1.08) translateY(-20px);
+  }
+
+  70%{
+    transform:scale(0.95) translateY(10px);
+  }
+
+  100%{
+    opacity:1;
+    transform:scale(1) translateY(0);
   }
 }
